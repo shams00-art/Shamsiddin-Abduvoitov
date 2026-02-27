@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-6">
+        <div class="card shadow border-0 rounded-4">
+            <div class="card-body p-4">
+                <h2 class="mb-4 fw-bold">Muammo yuborish</h2>
+                <form method="POST">
+                    {% csrf_token %}
+                    <div class="mb-3">
+                        <label class="form-label fw-bold">Ism familiya</label>
+                        <input type="text" name="full_name" class="form-control" required>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label fw-bold">Telefon</label>
+                        <input type="text" name="phone" class="form-control" placeholder="+998901234567" required>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label fw-bold">Muammo turi</label>
+                        <select name="problem_type" class="form-select">
+                            <option value="yol">Yo'l</option>
+                            <option value="suv">Suv</option>
+                            <option value="chiroq">Chiroq</option>
+                            <option value="axlat">Axlat</option>
+                            <option value="boshqa">Boshqa</option>
+                        </select>
+                    </div>
+                    <div class="mb-4">
+                        <label class="form-label fw-bold">Tavsif</label>
+                        <textarea name="description" class="form-control" rows="4" required></textarea>
+                    </div>
+                    <div class="d-flex gap-2">
+                        <a href="/" class="btn btn-outline-secondary flex-grow-1">⬅ Orqaga</a>
+                        <button type="submit" class="btn btn-success flex-grow-1">Yuborish</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

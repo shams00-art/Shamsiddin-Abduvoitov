@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="text-center py-5">
+    <h1 class="display-4 fw-bold">Raqamli Mahalla</h1>
+    <p class="lead">Mahalladagi muammolarni tezkor yuborish va nazorat qilish tizimi.</p>
+    {% if success %}
+        <div class="alert alert-success">✅ Murojaat qabul qilindi!</div>
+    {% endif %}
+    <a href="/submit/" class="btn btn-success btn-lg px-5 py-3 rounded-pill shadow">📩 Muammo yuborish</a>
+</div>
+{% endblock %}
